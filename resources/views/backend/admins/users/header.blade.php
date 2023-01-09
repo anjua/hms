@@ -1,4 +1,4 @@
-<ul class="nav nav-tabs nav-tabs-sloid mb-2 bg-white" id="myHeader">
+<ul class="nav nav-tabs nav-tabs-solid mb-2 mt-2 bg-white" id="myHeader">
     @foreach (App\Jambasangsang\Helper::getRoles() as $key => $role)
         <li class="nav-item">
             <a href="#" wire:click.prevent="getUserDataByRole('{{ $role->name }}')"

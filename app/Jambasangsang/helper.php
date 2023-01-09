@@ -45,7 +45,7 @@ class Helper
 
     public static function getRoles()
     {
-        return Role::orderBy('id', 'asc')->get(['id', 'name']);
+        return Role::orderBy('id', 'asc')->where('name','!=','patient')->get(['id', 'name']);
     }
 
     public static function getPerPageNumber()

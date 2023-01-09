@@ -40,12 +40,41 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ asset('jambasangsang/assets/css/style.css') }}">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
+
     @flashStyle
     @livewireStyles
 
     @stack('page-css')
 
 </head>
+
+<style>
+    .card{
+        border-bottom-left-radius: 40px !important;
+        border-bottom-right-radius: 40px !important;
+        border-top-left-radius: 40px !important;
+        border-top-right-radius: 40px !important;
+    }
+
+    .card-header{
+        border-top-left-radius: 40px !important;
+        border-top-right-radius: 40px !important;
+    }
+
+    .card-footer{
+        border-bottom-left-radius: 40px !important;
+        border-bottom-right-radius: 40px !important;
+    }
+
+    td{
+        vertical-align: middle !important;
+    }
+
+    tr{
+        border-bottom: solid 1px gainsboro !important;
+    }
+</style>
 
 <body class="antialiased">
     <!-- Main Wrapper -->
