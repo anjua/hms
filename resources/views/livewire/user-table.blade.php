@@ -1,10 +1,12 @@
 <div>
 
-    <div class="page-title mb-3">{{ Request()->segment(2) ? Str::upper(Request()->segment(2)) : 'Users' }}</div>
+    {{-- <div class="page-title mb-3">
+            {{ Request()->segment(2) ? Str::upper(Request()->segment(2)) : 'Users' }}
+    </div>
 
     <div class="float-right">
-        <button class="btn btn-primary">Add New User</button>
-    </div>
+        <a href="{{ route('users.create') }}" class="btn btn-primary">Add New User</a>
+    </div> --}}
 
     @include('backend/admins/users/header')
 
@@ -47,7 +49,16 @@
                         </td>
                         <td>{{ $user->email }}</td>
                         <td>{{ App\Jambasangsang\Helper::getGenderValue($user->gender) }}</td>
-                        <td>{{ App\Jambasangsang\Helper::getStatusValue($user->status) }}</td>
+                        {{-- <td>{{ App\Jambasangsang\Helper::getStatusValue($user->status) }}</td> --}}
+                        <td>
+                            <div class="status-toggle">
+                                <input type="checkbox" id="status{{$user->id}}" 
+                                {{ App\Jambasangsang\Helper::getStatusValue($user->status) }}
+                                wire:click="changeStatus('{{$user->id}}', {{$user->status}})"
+                                class="check">
+                                <label for="status{{$user->id}}" class="checktoggle">Checkbox</label>
+                            </div>
+                        </td>
                         <td>
                             <div class="btn-group">
                                 <a href="#"><i class="fa fa-edit fa-x2 px-2"></i></a>

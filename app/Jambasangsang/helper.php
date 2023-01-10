@@ -12,11 +12,11 @@ class Helper
     {
         switch ($status) {
             case 0:
-              return "Inactive";
+              return "";
                 break;
 
             default:
-            return "Active";
+            return "checked";
                 break;
         }
     }
@@ -40,6 +40,27 @@ class Helper
             '' => 'Select',
             '1' => 'Active',
             '0' => 'InActive',
+        ];
+    }
+
+    public static function getGender()
+    {
+        return [
+            '' => 'Select',
+            '1' => 'Male',
+            '0' => 'Female',
+        ];
+    }
+
+    public static function getReligion()
+    {
+        return [
+            '' => 'Select',
+            '1' => 'Islam',
+            '2' => 'Kriten',
+            '3' => 'Katolik',
+            '4' => 'Budha',
+            '5' => 'Hindu',
         ];
     }
 

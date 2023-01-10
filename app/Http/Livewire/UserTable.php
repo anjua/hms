@@ -35,6 +35,13 @@ class UserTable extends Component
         //User::find();
     }   
 
+    public function changeStatus($userId, $status)
+    {
+        $updateStatus = $status == 0 ? 1 : 0;
+        //dd($updateStatus);
+        User::find($userId)->update(['status' => $updateStatus]);
+    }
+
     public function render()
     {
         if (!in_array($this->currentUrl, ['users.index'])) {
