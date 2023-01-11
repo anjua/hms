@@ -42,6 +42,11 @@ class UserTable extends Component
         User::find($userId)->update(['status' => $updateStatus]);
     }
 
+    public function deleteUser($id)
+    {
+        # code...
+    }
+
     public function render()
     {
         if (!in_array($this->currentUrl, ['users.index'])) {

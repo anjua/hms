@@ -38,4 +38,9 @@ class UserService
 
         return $this;
     }
+
+    public function editUserData($user)
+    {
+        return $user;
+    }
 }

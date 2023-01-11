@@ -45,6 +45,8 @@
     @flashStyle
     @livewireStyles
 
+    <x-flatpickr::style />
+
     @stack('page-css')
 
 </head>
@@ -124,6 +126,8 @@
     @flashScript
     @flashRender
     @livewireScripts
+
+    <x-flatpickr::script />
 
     @stack('page-script')
 

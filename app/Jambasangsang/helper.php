@@ -47,8 +47,8 @@ class Helper
     {
         return [
             '' => 'Select',
-            '1' => 'Male',
-            '0' => 'Female',
+            'M' => 'Male',
+            'F' => 'Female',
         ];
     }
 
@@ -62,6 +62,11 @@ class Helper
             '4' => 'Budha',
             '5' => 'Hindu',
         ];
+    }
+
+    public static function selected($value1, $value2)
+    {
+        return $value1 == $value2 ? 'selected' : '';
     }
 
     public static function getRoles()

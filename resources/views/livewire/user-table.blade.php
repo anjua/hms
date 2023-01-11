@@ -61,8 +61,8 @@
                         </td>
                         <td>
                             <div class="btn-group">
-                                <a href="#"><i class="fa fa-edit fa-x2 px-2"></i></a>
-                                <a href="#"><i class="fa fa-trash text-danger"></i></a>
+                                <a href="{{ route('users.edit', [$user->id]) }}"><i class="fa fa-edit fa-x2 px-2"></i></a>
+                                <a href="#" wire:click="deleteUser('{{ $user->id }}')" data-toggle="modal" data-target="#deleteModal" ><i class="fa fa-trash text-danger"></i></a>
                             </div>
                         </td>
                     </tr>
@@ -80,6 +80,6 @@
                 {{ $users->links() }}
             </div>
         @endif
-
+        <x-modals.delete :date="$user" />
     </div>
 </div>
