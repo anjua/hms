@@ -138,6 +138,10 @@
                 $('.page-title').text(url.toUpperCase().replace('-', ' '));
             });
         });
+
+        window.addEventListener('openModal' => event{
+            $(#deleteModal).modal('show')
+        });
     </script>
 
 </body>

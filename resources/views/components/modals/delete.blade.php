@@ -1,4 +1,4 @@
-<div class="modal modal-fade" id="deleteModal">
+<div class="modal modal-fade" id="deleteModal" wire:ignore>
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -10,7 +10,7 @@
                 <form action="">
                     <p>Are You Sure Want to Delete?</p>
                 </form>
-                
+
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-success">OK</button>

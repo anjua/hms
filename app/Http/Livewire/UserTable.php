@@ -18,6 +18,7 @@ class UserTable extends Component
     public $perPage = 8;
     public $search = '';
     public $sortBy = 'desc';
+    public $user;
 
     public function mount()
     {
@@ -26,14 +27,14 @@ class UserTable extends Component
 
     public function getUserDataByRole($role)
     {
-        
+
         $this->emit('urlChange', $role);
         $this->currentUrl = $role;
         $this->resetPage();
         //dd($this->currentUrl);
         //$this->users = User::Role([$role])->get();
         //User::find();
-    }   
+    }
 
     public function changeStatus($userId, $status)
     {
@@ -42,9 +43,15 @@ class UserTable extends Component
         User::find($userId)->update(['status' => $updateStatus]);
     }
 
-    public function deleteUser($id)
+    public function openDeleteModal($userId)
     {
-        # code...
+        $this->user = User::find('$userId');
+        $this->dispatchBrowserEvent('openModal');
+    }
+
+    public function deleteUser()
+    {
+        $this->user->destroy();
     }
 
     public function render()

@@ -52,7 +52,7 @@
                         {{-- <td>{{ App\Jambasangsang\Helper::getStatusValue($user->status) }}</td> --}}
                         <td>
                             <div class="status-toggle">
-                                <input type="checkbox" id="status{{$user->id}}" 
+                                <input type="checkbox" id="status{{$user->id}}"
                                 {{ App\Jambasangsang\Helper::getStatusValue($user->status) }}
                                 wire:click="changeStatus('{{$user->id}}', {{$user->status}})"
                                 class="check">
@@ -62,7 +62,7 @@
                         <td>
                             <div class="btn-group">
                                 <a href="{{ route('users.edit', [$user->id]) }}"><i class="fa fa-edit fa-x2 px-2"></i></a>
-                                <a href="#" wire:click="deleteUser('{{ $user->id }}')" data-toggle="modal" data-target="#deleteModal" ><i class="fa fa-trash text-danger"></i></a>
+                                <a href="#" wire:click="openDeleteModal('{{ $user->id }}')" data-toggle="modal" data-target="#deleteModal" ><i class="fa fa-trash text-danger"></i></a>
                             </div>
                         </td>
                     </tr>
@@ -80,6 +80,6 @@
                 {{ $users->links() }}
             </div>
         @endif
-        <x-modals.delete :date="$user" />
+        <x-modals.delete :date="$user"/>
     </div>
 </div>
